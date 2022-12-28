@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Accounts Table">
+        <div style="height: 300px;">
+            <template if:true={accData}>
+                <lightning-datatable
+                    key-field="id"
+                    data={accData}
+                    columns={columns}
+                    hide-checkbox-column="true"></lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>

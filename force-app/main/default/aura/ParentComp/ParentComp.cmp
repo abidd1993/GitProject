@@ -1,0 +1,25 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="messageFromChild" type="String" />
+    
+    <aura:handler name="myEvent" event="c:ComponentEvent" action="{!c.handleComponentEvent}" />
+
+    <aura:attribute name="messageFromFruitNames" type="String" />
+    <aura:handler event="c:ApplicationEvent" action="{!c.handleApplicationEvent}" />
+    
+    <lightning:card title="Parent Component">
+        <p class="slds-var-p-horizontal_small">
+            This is Parent Component
+        </p>
+
+        <p class="slds-var-p-horizontal_small slds-p-vertical_small">
+            <lightning:input name="alertMessage" label="Message from Child Component" value="{!v.messageFromChild}"/>
+            <lightning:input name="alertFruitMessage" label="Message from Fruit Component" value="{!v.messageFromFruitNames}"/>
+        </p>
+
+        <hr/>
+        <c:ChildComp />
+
+    </lightning:card>
+
+    
+</aura:component>

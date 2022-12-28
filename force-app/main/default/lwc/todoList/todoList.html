@@ -1,0 +1,41 @@
+<template>
+    <!-- To Do list in markup -->
+    <lightning-card title="To Do List">
+        <div class="slds-var-p-horizontal_small">
+            <lightning-input name="todoItemField" class="validate" label="To Do Item" value={todoItem} onchange={taskChange}></lightning-input>
+          
+            <div class="slds-var-p-vertical_xx-small">
+                <lightning-button class="slds-m-top_small" variant="brand" label="+" onclick={handleAdd}></lightning-button>
+                <lightning-button class="slds-m-top_small" label="Reset" onclick={handleReset}></lightning-button>
+            </div>
+        </div>
+        <ol class="slds-has-dividers_around-space">
+            <template for:each={todoList} for:item="todo">
+                        <li key={todo.id} class="slds-item">
+                            <lightning-layout vertical-align="center" horizontal-align="spread">
+                                <lightning-layout-item padding="horizontal-small">
+                                    {todo}
+                                </lightning-layout-item>
+                                <lightning-layout-item padding="horizontal-small">
+                                    <lightning-input value={todo} type="checkbox" onchange={handleDone}></lightning-input>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </li>
+            </template>
+        </ol>
+        <br/>
+        <lightning-card title="Done">
+            <ol class="slds-has-dividers_around-space">
+                <template for:each={doneTasks} for:item="doneTaskitr">
+                    <li key={doneTaskitr.id} class="slds-item">
+                        <lightning-layout vertical-align="center" horizontal-align="spread">
+                            <lightning-layout-item padding="horizontal-small">
+                                {doneTaskitr}
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </li>        
+                </template>
+            </ol>
+        </lightning-card>
+    </lightning-card>
+</template>

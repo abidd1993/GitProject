@@ -1,0 +1,48 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId,flexipage:availableForRecordHome,flexipage:availableForAllPageTypes" 
+                controller="orderController">
+    
+    <lightning:quickActionAPI aura:id="quickActionAPI" />
+
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> -->
+
+    <!-- <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="Restaurant" type="String"/>
+    <aura:attribute name="Customer" type="String"/>
+    <aura:attribute name="Dishes" type="String"/>
+    <aura:attribute name="FoodRating" type="Integer"/>
+    <aura:attribute name="DeliveryRating" type="Integer"/>
+    <aura:attribute name="Status" type="Integer"/>
+
+    <lightning:card title="Edit Contact">
+            <lightning:input name="Restaurant" label="Restaurant " value="{!v.Restaurant}" />
+            <lightning:input name="Customer" label="Customer " value="{!v.Customer}" />
+            <lightning:input name="Dishes" label="Dishes" value="{!v.Dishes}" />
+            <lightning:input name="FoodRating" label="Food Rating" value="{!v.FoodRating}" />
+            <lightning:input name="DeliveryRating" label="Delivery Rating" value="{!v.DeliveryRating}" />
+            <lightning:input name="Status" label="Status" value="{!v.Status}" />
+        <div class="slds-p-top_small">
+            <lightning:button variant="brand" label="Update Order" title="Brand action" onclick="{!c.UpdateOrder}" />
+            <lightning:button label="Clear" title="Neutral action" onclick="{!c.Clear}" />
+        </div>
+    </lightning:card> -->
+
+    <aura:attribute name="status" type="String" />
+    <aura:attribute name="custId" type="Object" />
+
+    <lightning:card>
+        <lightning:recordEditForm recordId="{!v.recordId}" objectApiName="Order__c" onsuccess="{!c.updateOrder}">
+        <lightning:messages />
+        <lightning:inputField fieldName="Restaurant__c" />
+        <lightning:inputField fieldName="Customer__c" aura:id="custId" />
+        <lightning:inputField fieldName="Dishes__c" />
+        <lightning:inputField fieldName="Status__c" value="{!v.status}" />
+        <aura:if isTrue="{!v.status == 'Delivered'}">
+            <lightning:inputField fieldName="Food_Rating__c" />
+            <lightning:inputField fieldName="Delivery_Partner_Rating__c" />
+        </aura:if>
+               
+        <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update" />
+    </lightning:recordEditForm>
+    </lightning:card>
+
+</aura:component>

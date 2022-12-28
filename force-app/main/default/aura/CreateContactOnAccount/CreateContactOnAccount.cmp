@@ -1,0 +1,21 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId" 
+    controller="CreateContactFromAura">
+    
+    <lightning:quickActionAPI aura:id="quickActionAPI" />
+
+    <aura:attribute name="FirstName" type="String"/>
+    <aura:attribute name="LastName" type="String"/>
+    <aura:attribute name="Email" type="String"/>
+    <aura:attribute name="Phone" type="Integer"/>
+
+    <lightning:card title="Create Contact"> 
+            <lightning:input name="FirstName" label="First Name " value="{!v.FirstName}" />
+            <lightning:input name="LastName" label="Last Name " value="{!v.LastName}" />
+            <lightning:input name="Phone" label="Phone" value="{!v.Phone}" />
+            <lightning:input name="Email" label="Email" value="{!v.Email}" />
+        <div class="slds-p-top_small">
+            <lightning:button variant="brand" label="Create Contact" title="Brand action" onclick="{!c.CreateContact}" />
+            <lightning:button label="Clear" title="Neutral action" onclick="{!c.Clear}" />
+        </div>     
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Create Contact (without RecordForm)">
+        <div class="slds-var-p-left_small slds-var-p-right_small">
+            <lightning-input name="firstName" label="First Name" value={firstName}></lightning-input>
+            <lightning-input name="lastName" label="Last Name" value={lastName} required></lightning-input>
+            <lightning-input name="phone" label="Phone" value={phone} class="validate" pattern="[0-9]{10}$" 
+                             message-when-pattern-mismatch="Please enter a valid phone number"></lightning-input>
+
+            <lightning-input name="email" label="Email" value={email} class="validate" pattern="[A-Za-z0-9._-]+@[a-z0-9-]+\.[a-z]{2,}$" 
+                             message-when-pattern-mismatch="Please enter a valid email" required></lightning-input>
+
+            <lightning-input name="birthdate" type="date" label="Birthdate" value={birthdate}></lightning-input>
+            <div class="slds-var-m-top_small">
+                <lightning-button variant="brand" label="Create new" onclick={handleCreate}></lightning-button>
+                <lightning-button type="reset" label="Reset" onclick={handleReset}></lightning-button>
+            </div>  
+        </div>
+    </lightning-card>
+</template>

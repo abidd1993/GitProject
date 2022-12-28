@@ -1,0 +1,10 @@
+<template>
+    <!-- Show cricketer Names in template -->
+    <lightning-card title="Cricketers in JS">
+        <template for:each={cricketers} for:item="cricketer">
+            <p key={cricketer.id} class="slds-var-p-left_small slds-p-vertical_xx-small">
+                <lightning-badge label={cricketer.Name}></lightning-badge>
+            </p>
+        </template>
+    </lightning-card>
+</template>

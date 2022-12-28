@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <div class="slds-var-p-around_medium">
+            <lightning-button
+                slot="actions"
+                label={buttonLabel}
+                onclick={toggleDetails}
+            ></lightning-button>
+            <br />
+            <template if:true={showDescription}>
+                <p>
+                    {descriptionField}
+                </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

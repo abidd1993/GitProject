@@ -1,0 +1,9 @@
+<template>
+    <lightning-card>
+        <template for:each={conList.data} for:item="con">
+            <p key={con.Id} class="slds-var-p-left_small">
+                {con.Name}
+            </p>
+        </template>
+    </lightning-card>
+</template>

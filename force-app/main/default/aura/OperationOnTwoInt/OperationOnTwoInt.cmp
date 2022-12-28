@@ -1,0 +1,41 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="numberOne" type="integer"/>
+    <aura:attribute name="numberTwo" type="integer"/>
+    <aura:attribute name="Total" type="integer"/>
+
+    <aura:attribute name="isAdd" type="boolean" default="false" />
+    <aura:attribute name="isSub" type="boolean" default="false" />
+    <aura:attribute name="isMul" type="boolean" default="false" />
+    <aura:attribute name="isDiv" type="boolean" default="false" />
+
+
+    <lightning:card title="Operation on Two Numbers">
+
+            <aura:set attribute="actions">
+            
+            </aura:set>
+
+            <p class="slds-var-p-horizontal_small">
+            Give two numbers below.
+            </p>
+
+            <div class="slds-var-p-horizontal_small">
+                <lightning:input name="inputNum1" label="Enter First Number" value="{!v.numberOne}"/>
+                <lightning:input name="inputNum2" label="Enter Second Number" value="{!v.numberTwo}"/>
+                <lightning:input name="Total" label="Total" value="{!v.Total}"/>
+            </div>
+
+            <div class="slds-align_absolute-center" style="height:3rem">
+
+                <lightning:buttonGroup>
+                    <lightning:button label="Addition" onclick="{!c.Add}"/>
+                    <lightning:button label="Subtract" onclick="{!c.Sub}" />
+                    <lightning:button label="Multiple" onclick="{!c.Mul}" />
+                    <lightning:button label="Division" onclick="{!c.Div}" />
+                    <lightning:button label="Clear" onclick="{!c.Clear}" />
+                </lightning:buttonGroup>
+            </div>
+
+    </lightning:card>
+
+</aura:component>

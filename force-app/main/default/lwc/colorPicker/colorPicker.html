@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-left_small slds-p-right_small">
+            <lightning-combobox 
+                    name="colorPicker"
+                    label="Choose a Color"
+                    options={colors}
+                    
+                    placeholder="Select a color"
+                    onchange={handleColorChange}></lightning-combobox>
+
+            <p class="slds-p-vertical_x-small">Selected color is : {colorName}</p>
+        </div>
+    </lightning-card>
+</template>

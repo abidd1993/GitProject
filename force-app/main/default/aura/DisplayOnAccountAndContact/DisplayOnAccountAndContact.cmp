@@ -1,0 +1,7 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <lightning:card>
+        <p class="slds-var-p-horizontal_small">
+            Hi! This is a Lightning Aura Component.
+        </p>
+    </lightning:card>
+</aura:component>

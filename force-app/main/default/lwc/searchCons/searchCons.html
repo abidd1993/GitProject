@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Contact Search">
+        <div class="slds-p-left_small slds-p-right_small">
+            <lightning-input name="searchTerm" type="search" label="Search" value={searchTerm} onchange={handleSearchTermChange}></lightning-input>
+            <template if:true={contacts.data}>
+                <template for:each={contacts.data} for:item="contact">
+                    <p key={contact.Id} class="slds-var-p-left_small slds-p-vertical_xx-small">
+                        <lightning-badge label={contact.Name}></lightning-badge>
+                    </p>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

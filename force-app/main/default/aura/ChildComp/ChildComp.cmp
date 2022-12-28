@@ -1,0 +1,12 @@
+<aura:component>
+    <aura:registerEvent name="myEvent" type="c:ComponentEvent" />
+
+    <aura:attribute name="messageString" type="String" />
+    <p class="slds-var-p-horizontal_small">
+        This is Child Component
+    </p>
+
+    <div class="slds-p-left_small slds-p-vertical_xx-small">
+        <lightning:button label="Fire Component Event" onclick="{!c.sendMessage}" />
+    </div>
+</aura:component>
